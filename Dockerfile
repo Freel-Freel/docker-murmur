@@ -11,6 +11,7 @@ COPY --chown=${UID}:${GID} mumble-server.ini /var/lib/${USER}
 
 USER ${UID}:${GID}
 WORKDIR /var/lib/${USER}
-CMD ["murmurd", "-ini", "mumble-server.ini", "-fg"]
+ENTRYPOINT ["murmurd", "-ini", "mumble-server.ini", "-fg"]
+CMD []
 
 EXPOSE 64738 64738/udp
